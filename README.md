@@ -4,7 +4,7 @@ This is a draft proposal to encode additional subscript and
 superscript characters in future versions of Unicode, motivated mainly
 by computer programming for technical applications.
 
-Many programming languages (C#, Go, Java, Julia, Java, C#, Swift, etc.) now
+Many programming languages (C#, Go, Java, Julia, Python, Rust, Swift, etc.) now
 allow identifiers to use a wide array of Unicode characters, which enables
 programs in mathematical fields to use notations that closely hew
 to the original mathematical notations.  e.g. one can now have variable names
