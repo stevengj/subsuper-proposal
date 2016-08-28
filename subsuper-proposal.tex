@@ -7,8 +7,10 @@
 \usepackage{mathrsfs}
 \usepackage{amsbsy}
 \usepackage{amssymb}
-\usepackage[unicode=true]
- {hyperref}
+\usepackage[unicode=true]{hyperref}
+
+\usepackage{todonotes} %XXX REMOVE ME WHEN DONE
+\newcommand{\TODO}[1]{\todo[inline]{#1}}
 
 \makeatletter
 
@@ -26,11 +28,13 @@ for Mathematical Programming}
 \author{Prof. Steven G. Johnson, MIT Department of Mathematics}
 
 \maketitle
-\begin{center}
+
+
+\TODO{%
 .... add other endorsers here --- we don't want to turn this into
 an Internet petition, but endorsements from well-known developers,
 organizations, open-source projects, and companies, could be helpful
-\par\end{center}
+}
 
 
 \section{Summary}
@@ -136,7 +140,7 @@ What other math symbols are commonly used as super/subscripts? $\Vert,\perp,*,\d
 We also could use punctuation: commas and semicolons, for things like
 $A_{i,j}$. This is a bit tricky because most programming languages
 do not allow punctuation in identifiers (although Julia allows super/subscript
-parentheses). 
+parentheses).
 
 
 \subsection{Character Properties}
@@ -164,16 +168,18 @@ Proposals should include ``the name and contact information
 for a company or individual who would agree to provide a computerized
 font (True Type or PostScript) for publication of the standard''
 (\url{http://unicode.org/pending/proposals.html})
-\dots{} how can we do this?
+\TODO{how can we do this?}
 
 
 \section{Contact Information}
 
-\emph{``names and addresses of appropriate contacts
+\TODO{``names and addresses of appropriate contacts
 within national body or user organizations''}
 \begin{itemize}
 \item Steven G. Johnson, MIT Room 2-345, 77 Massachusetts Ave. Cambridge,
-MA 02139\end{itemize}
+MA 02139
+
+\end{itemize}
 \begin{thebibliography}{10}
 \bibitem{Python}Martin von L{\"o}wis, ``Python PEP 3131:
 Supporting Non-ASCII Identifiers,'' \url{https://www.python.org/dev/peps/pep-3131/}
@@ -231,7 +237,7 @@ Unicode Support for Mathematics'' \url{http://www.unicode.org/unicode/reports/tr
 \bibitem{L2-10-230}Karl Pentzlin, ``Proposal to encode
 a modifier letter used in French abbreviations in the UCS,''
 \url{http://www.unicode.org/L2/L2010/10230-modifier-q.pdf}
-(2010-07-13). 
+(2010-07-13).
 
 \bibitem{L2-11-208}ISO/IEC JTC1/SC35/WG1, ``Proposal
 to encode missing Latin small capital and modifier letters in the
