@@ -46,9 +46,8 @@ organizations, open-source projects, and companies, could be helpful
 
 \section{Summary}
 
-Many recent programming languages (including Python 3~\cite{Python},
-Go~\cite{Go}, Julia~\cite{Julia}, Fortress~\cite{Fortress},
-Java~\cite{Java}, C\#~\cite{Csharp}, and Swift\cite{Swift}) allow
+Many recent programming languages (including C\#~\cite{Csharp}, Fortress~\cite{Fortress}, 
+Go~\cite{Go}, Java~\cite{Java}, Julia~\cite{Julia}, Python~3~\cite{Python}, and Swift\cite{Swift}) allow
 a broad range of Unicode characters to be employed by the programmer
 for identifiers (names of functions and variables), and indeed such
 behavior is recommended by the \emph{Unicode Standard Annex~\#31}~\cite{UAX31}.
@@ -66,7 +65,7 @@ Furthermore, text-editing software is making it increasingly easy
 for programmers to type such symbols by ``tab completion''
 (e.g. typing ``$\mathrm{{\upalpha_{x}}}$''
 as \texttt{\textbackslash{}alpha}\texttt{\emph{{[}tab{]}}}\texttt{\textbackslash{}\_x}\texttt{\emph{{[}tab{]}}})
-or related techniques in several popular editors~\cite{Atom,Emacs,Sublime,Vim}
+or related techniques in several popular editors~\cite{vsCode,Atom,Emacs,Sublime,Vim}
 and interactive programming environments~\cite{Julia,IPython}. This
 is an important and positive trend. To quote a 2001 draft of \emph{Unicode
 Technical Report~\#25}~\cite[section 5.3]{UTR25}, \emph{Using real
@@ -76,7 +75,7 @@ and streamlined documentation.}
 
 One notation that is extremely common throughout all of mathematics
 is the use of subscripts and superscripts. Unfortunately, Unicode
-9.0 provides only a very limited selection of subscript and superscript
+13.0 provides only a very limited selection of subscript and superscript
 characters (digits 0--9, parentheses, $+$/$-$/$=$, a subset of
 the Latin and Greek alphabets, and a few phonetic symbols). Therefore,\textbf{
 we propose that Unicode be extended to encode all the subscript/superscript
@@ -85,17 +84,17 @@ and upper-case Latin and Greek letters (and variants thereof) and
 a selection of other mathematical symbols described below. Because
 these are all derived from existing Unicode codepoints, the assignment
 of their properties and the development of their fonts will be straightforward.
-\textbf{Alternatively}, we urge the Consortium to consider an approach
-that is more elegant and general, but whose implementation is slightly
-more ambitious: \textbf{add new ``mathematical subscript'' and ``mathematical
-superscript'' combining characters} that convert the preceding glyph
-(character + combining characters) into a sub/superscript. (This is
+As one possible implementation strategy, we suggest that the Consortium
+\textbf{add two new ``mathematical subscript'' and ``mathematical
+superscript'' combining characters} that convert the preceding character
+(or character + combining characters) into a sub/superscript. (This is
 closely related to the superscript and ``scientific
 inferiors'' features already present in OpenType~\cite{OpenType}.)
-Note that the two approaches are not incompatible---a more limited
-set of sub/superscripts implemented now could co-exist with combining
-marks implemented later, via canonical decomposition/composition to
-convert between them.
+Although the combining-character approach is potentially very general, it could
+initially be suggested that the new combining characters may be ignored
+except following a limited subset of characters commonly used in
+mathematical notation (similar to how the emoji skin-tone modifiers only affect
+rendering of a small set of emoji characters with skin-tone variants).
 
 We should mention that there were past proposals to extend the range
 of subscript and superscript characters in Unicode~\cite{L2-10-230,L2-11-208}
@@ -117,8 +116,7 @@ ordinary usage, computer code (and especially identifiers) cannot
 be intermingled with MathML markup or other formatting codes---with
 a few exceptions such as Mathematica~\cite{Mathematica} that are
 edited and/or rendered mainly within specialized software). Third,
-if the new subscript/superscript characters are explicitly enumerated (as
-opposed to defining new combining characters), the restriction to
+if the new subscript/superscript characters are explicitly enumerated, the restriction to
 \emph{common mathematical notations} immediately limits the scope
 of the additions, excluding the vast majority of Unicode characters
 from consideration.
@@ -190,49 +188,54 @@ MA 02139
 
 \end{itemize}
 \begin{thebibliography}{10}
-\bibitem{Python}Martin von L{\"o}wis, ``Python PEP 3131:
-Supporting Non-ASCII Identifiers,'' \url{https://www.python.org/dev/peps/pep-3131/}
-(2007-05-01).
 
-\bibitem{Go}The Go Authors, \emph{The Go Programming Language Specification},
-\url{https://golang.org/ref/spec} (2016-05-31).
-
-\bibitem{Julia}The Julia Authors, \emph{The Julia Programming Language
-Manual}, \url{http://docs.julialang.org/en/latest/manual/variables/}
-(retrieved 2016-08-25).
+\bibitem{Csharp}Microsoft Corporation, \emph{C\# Language Specification},
+version 5.0, section 2.4.2 (2012).
 
 \bibitem{Fortress}Sun Microsystems, Inc., \emph{The Fortress Language
 Specification}, version 1.0, \url{http://www.ccs.neu.edu/home/samth/fortress-spec.pdf}
 (2008-03-31).
+
+\bibitem{Go}The Go Authors, \emph{The Go Programming Language Specification},
+\url{https://golang.org/ref/spec} (2020-01-14).
 
 \bibitem{Java}James Gosling, Bill Joy, Guy Steele, Gilad Bracha,
 and Alex Buckley, \emph{The Java Language Specification: Java SE 8
 Edition}, section 3.8, \url{http://docs.oracle.com/javase/specs/jls/se8/html/jls-3.html\#jls-3.8}
 (2015-02-13).
 
-\bibitem{Csharp}Microsoft Corporation, \emph{C\# Language Specification},
-version 5.0, section 2.4.2 (2012).
+\bibitem{Julia}The Julia Authors, \emph{The Julia Programming Language
+Manual}, \url{http://docs.julialang.org/en/latest/manual/variables/}
+(retrieved 2016-08-25).
+
+\bibitem{Python}Martin von L{\"o}wis, ``Python PEP 3131:
+Supporting Non-ASCII Identifiers,'' \url{https://www.python.org/dev/peps/pep-3131/}
+(2007-05-01).
 
 \bibitem{Swift}Apple Inc, \emph{The Swift Programming Language},
-version 2.2, \url{https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/LexicalStructure.html}
-(2016-03-21).
+version 5.3, \url{https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/LexicalStructure.html}
+(2020-06-22).
 
 \bibitem{UAX31}Mark Davis, \emph{Unicode Standard Annex \#31: Unicode
-Identifier and Pattern Syntax}, version 9.0.0, \url{http://www.unicode.org/reports/tr31/tr31-25.html}
-(2016-05-31).
+Identifier and Pattern Syntax}, version 13.0.0, \url{https://www.unicode.org/reports/tr31/tr31-33.html}
+(2020-02-13).
+
+\bibitem{vsCode}Unicode LaTeX plugin for the vsCode editor,
+\url{https://marketplace.visualstudio.com/items?itemName=oijaz.unicode-latex}
+(retrieved 2020-08-24).
 
 \bibitem{Atom}atom-latex-completions plugin for the Atom editor,
 \url{https://github.com/JunoLab/atom-latex-completions}
-(retrieved 2016-08-25).
+(retrieved 2020-08-24).
 
 \bibitem{Emacs}\TeX{} Input Method for the Emacs editor, \url{https://www.emacswiki.org/emacs/TeXInputMethod}
-(retrieved 2016-08-25).
+(retrieved 2020-08-24).
 
 \bibitem{Sublime}UnicodeMath plugin for the Sublime editor, \url{https://github.com/mvoidex/UnicodeMath}
-(retrieved 2016-08-25).
+(retrieved 2020-08-24).
 
 \bibitem{Vim}julia-vim plugin for the vim editor, \url{https://github.com/JuliaLang/julia-vim}
-(retrieved 2016-08-25).
+(retrieved 2020-08-24).
 
 \bibitem{IPython}Brian E. Granger, ``Adds Julia-style
 latex->unicode tab completion,'' \emph{IPython pull
@@ -260,7 +263,7 @@ in the UCS,'' \url{http://www.unicode.org/L2/L2010/10315-comment.pdf}
 
 \bibitem{UCDF}``Superscript latin small letter q,''
 discussion on \emph{The Unicode Consortium Discussion Forum}, \url{http://www.unicode.org/forum/viewtopic.php?f=24&t=142}
-(2011).
+(2011) (retrieved at at \url{https://web.archive.org/web/20151019072726/http://www.unicode.org/forum/viewtopic.php?f=24&t=142}  2020-08-24).
 
 \bibitem{Mathematica}Stephen Wolfram, ``Mathematical
 Notation: Past and Future,'' \url{http://www.stephenwolfram.com/publications/mathematical-notation-past-future/}
