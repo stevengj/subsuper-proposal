@@ -52,7 +52,7 @@ organizations, open-source projects, and companies, could be helpful
 \section{Summary}
 \label{sec:summary}
 
-Many recent programming languages (including C\#~\cite{Csharp}, Fortress~\cite{Fortress}, 
+Many recent programming languages (including C\#~\cite{Csharp}, Fortress~\cite{Fortress},
 Go~\cite{Go}, Java~\cite{Java}, Julia~\cite{Julia}, Python~3~\cite{Python}, Scala\cite{Scala}, and Swift\cite{Swift}) allow
 a broad range of Unicode characters to be employed by the programmer
 for identifiers (names of functions and variables), and indeed such
@@ -155,7 +155,7 @@ The following existing Unicode codepoints are widely used in subscripts and supe
 
 \item Comma `,' (U+002C) and semicolon `;' (U+003B).
 
-\item Common mathematical operators: `$+$` (U+002B), `$-$` (U+002D and U+2212), `$\pm$' (U+00B1), `$*$' (U+002A), `$\times$' (U+00D7), `$=$' (U+003D), `$<$` (U+003C), `$>$' (U+003E).   Of these, `$+$', and `$-$', `$=$' already have acceptable sub/superscript characters (U+207A--207C and U+0208A--208C), which should be canonically equivalent to the corresponding character followed by a sub/superscript combining character as described below.
+\item Common mathematical operators: `$+$` (U+002B), `$-$` (U+002D and U+2212), `$\pm$' (U+00B1), `$*$' (U+002A), `$\times$' (U+00D7), `/' (U+002F), `$=$' (U+003D), `$<$` (U+003C), `$>$' (U+003E).   Of these, `$+$', and `$-$', `$=$' already have acceptable sub/superscript characters (U+207A--207C and U+0208A--208C), which should be canonically equivalent to the corresponding character followed by a sub/superscript combining character as described below.
 
 \item Other important mathematical symbols widely used in sub/superscript form: `$\Vert$'  (U+2016), `$\perp$' (U+27C2), `$\infty$' (U+221E), `$\dagger$' (U+2020), `$\angle$' (U+2220).
 
@@ -173,7 +173,7 @@ Both of these characters could be put into the general category Mn (nonspacing m
 
 The new combining characters should have bidirectional class ``Other Neutrals (ON)'' and mirror class ``N'' similar to the emoji modifiers, with no upper/lowercase mapping, should be treated like other combining characters for line-breaking and collation, and should be allowed in identifiers as lexical class \texttt{ID\_Continue} as mentioned above.   Several  canonical equivalencies to existing sub/superscript characters are suggested in \secref{required}.
 
-Some programming languages may further opt to allow additional sub/superscript mathematical symbols in identifiers on a case-by-case basis. For example, Julia~\cite{Julia} already allows sub/superscript parentheses in identifiers (e.g. $\upchi^{(3)}$ is a valid Julia identifier for a ``Kerr susceptibility'' in optics) so it might be natural in Julia to allow sub/superscript commas and asterisks (e.g. $\mathrm{p}^*$ or $\mathrm{p}_*$ may denote the ``primal optimum'' in convex-optimization problems). 
+Some programming languages may further opt to allow additional sub/superscript mathematical symbols in identifiers on a case-by-case basis. For example, Julia~\cite{Julia} already allows sub/superscript parentheses in identifiers (e.g. $\upchi^{(3)}$ is a valid Julia identifier for a ``Kerr susceptibility'' in optics) so it might be natural in Julia to allow sub/superscript commas and asterisks (e.g. $\mathrm{p}^*$ or $\mathrm{p}_*$ may denote the ``primal optimum'' in convex-optimization problems).
 
 \subsection{Alternative: Many new sub/superscript characters}
 
