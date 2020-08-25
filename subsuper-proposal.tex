@@ -43,11 +43,13 @@ an Internet petition, but endorsements from well-known developers,
 organizations, open-source projects, and companies, could be helpful
 }
 
+\abstract{Widespread Unicode support in programming languages now allows software developers in technical fields to use notations like Greek letters and super/subscripts in their code that closely follow standard mathematical notations. This development has been hampered by the fact that only a subset of Latin and Greek characters have super/subscript codepoints in Unicode 13, and so we propose to expand the set of super/subscript characters to encompass common mathematical usage, ideally by simply adding two new combining characters.}
+
 
 \section{Summary}
 
 Many recent programming languages (including C\#~\cite{Csharp}, Fortress~\cite{Fortress}, 
-Go~\cite{Go}, Java~\cite{Java}, Julia~\cite{Julia}, Python~3~\cite{Python}, and Swift\cite{Swift}) allow
+Go~\cite{Go}, Java~\cite{Java}, Julia~\cite{Julia}, Python~3~\cite{Python}, Scala\cite{Scala}, and Swift\cite{Swift}) allow
 a broad range of Unicode characters to be employed by the programmer
 for identifiers (names of functions and variables), and indeed such
 behavior is recommended by the \emph{Unicode Standard Annex~\#31}~\cite{UAX31}.
@@ -222,6 +224,10 @@ Manual}, \url{http://docs.julialang.org/en/latest/manual/variables/}
 \bibitem{Python}Martin von L{\"o}wis, ``Python PEP 3131:
 Supporting Non-ASCII Identifiers,'' \url{https://www.python.org/dev/peps/pep-3131/}
 (2007-05-01).
+
+\bibitem{Scala}M.~Odersky \textit{et al.}, \emph{Scala Language Specification},
+version 2.13, \url{https://scala-lang.org/files/archive/spec/2.13/01-lexical-syntax.html}
+(2020-08-25).
 
 \bibitem{Swift}Apple Inc, \emph{The Swift Programming Language},
 version 5.3, \url{https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/LexicalStructure.html}
