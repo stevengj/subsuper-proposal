@@ -50,7 +50,7 @@ an Internet petition, but endorsements from well-known developers,
 organizations, open-source projects, and companies, could be helpful
 }
 
-\abstract{Widespread Unicode support in programming language parsers now allows software developers in technical fields to use notations like Greek letters and sub/superscripts in their source code that closely follow standard mathematical notations. This development has been hampered by the fact that only a subset of Latin and Greek characters have sub/superscript codepoints in Unicode 13, and so we propose to expand the set of sub/superscript characters to encompass common mathematical usage, ideally by simply adding two new combining characters.}
+\abstract{Widespread Unicode support in programming-language parsers now allows software developers in technical fields to use notations like Greek letters and sub/superscripts \emph{in their source code} that closely follow standard mathematical notations. This development has been hampered by the fact that only a subset of Latin and Greek characters have sub/superscript codepoints in Unicode 13, and so we propose to expand the set of sub/superscript characters to encompass common mathematical usage, ideally by simply adding two new combining characters.}
 
 
 \section{Summary}
@@ -64,7 +64,7 @@ behavior is recommended by the \emph{Unicode Standard Annex~\#31}~\cite{UAX31}.
 For programmers working in mathematical fields, including statistics,
 science, and engineering, where a wide array of mathematical notations
 and symbols are commonplace, this often enables computer programs
-to be written in a notation that closely mimics their standard mathematical
+to be written in a notation that closely mimics standard mathematical
 descriptions. For example, in a mathematical context one might easily
 have a quantity with a name like $\hat{x}$ or $\alpha_{x}$, and
 the same names can now be used in computer programs for this quantity
@@ -112,20 +112,20 @@ of subscript and superscript characters in Unicode~\cite{L2-10-230,L2-11-208}
 that were rejected. We have been unable to find an official record
 of the grounds for rejection of these proposals, but there seem to
 be two common objections in discussions of this topic on Unicode forums~\cite{Miller10,UCDF}.
-First, that this is mere ``formatting''
+First, that this is \emph{mere ``text presentation''}
 devoid of semantic content, which is better accomplished via markup
-languages like MathML or other typesetting technologies. Second, that
+languages like MathML or other typesetting technologies such as the OpenType MATH table. Second, that
 the set of characters that deserve sub/superscript variants is unclear
 and might be subjected to never-ending extension. We believe that
 both of those objections must be re-evaluated in light of mathematical
 programming. First, subscripts and superscripts of any kind in mathematics
 always have semantic content ($\mathrm{{\upalpha_{x}}}$ is very different
-in meaning from $\mathrm{\upalpha\mathrm{{x}}}$). Second, \emph{programming
-languages are almost invariably restricted to ``plain text''}---in
+in meaning from $\mathrm{\upalpha\mathrm{{x}}}$). More importantly, \textbf{programming
+language source code is almost invariably restricted to ``plain text''}---in
 ordinary usage, computer code (and especially identifiers) cannot
-be intermingled with MathML markup or other formatting codes---with
+be intermingled with MathML markup or other formatting metadata---with
 a few exceptions such as Mathematica~\cite{Mathematica} that are
-edited and/or rendered mainly within specialized software). Third,
+edited and/or rendered mainly within specialized software. Finally,
 the restriction to
 \emph{common mathematical notations} greatly limits the scope
 of the additions, excluding the vast majority of Unicode characters
@@ -185,7 +185,7 @@ The alternative to adding new combining characters is to simply add new characte
 
 \section{Lack of Possible Equivalents}
 
-As explained in \secref{required}, Unicode currently contains only a subset of the most common mathematical subscripts and superscripts, and omits many Latin and Greek letters (e.g. there is no superscript `q' or subscript `A').  Furthermore, markup languages like MathML, OpenDocument format (ODF), and similar typesetting/text-formatting technologies are not usable for representing code in programming languages, nearly all of which require ``plain text'' input with no XML or other formatting metadata.
+As explained in \secref{required}, Unicode currently contains only a subset of the most common mathematical subscripts and superscripts, and omits many Latin and Greek letters (e.g. there is no superscript `q' or subscript `A').  Furthermore, formatting/presentation markup like MathML, OpenDocument format (ODF), and similar typesetting/text-formatting technologies are \textbf{not usable for source code} in programming languages, nearly all of which require ``plain text'' input with no XML or other formatting metadata.
 
 \section{Provision of Fonts}
 
