@@ -142,16 +142,16 @@ set of mathematical subscripts and superscripts, and especially to
 eliminate frustrating omissions from the Latin and Greek alphabets.
 
 
-\section{Required Subscript/Superscript Characters}
+\section{Suggested Subscript/Superscript Characters}
 \label{sec:required}
 
-The following existing Unicode codepoints are widely used in subscripts and superscripts of mathematical notation, and should therefore have new sub/superscript variants (either as new codepoints or via combining characters as described below):
+The following existing Unicode codepoints are widely used in subscripts and superscripts of mathematical notation, and should therefore have new sub/superscript variants (ideally via combining characters as described below):
 
 \begin{itemize}
 
-\item Latin upper- and lower-case characters `a'--`z' (U+0061--007A) and `A'--`Z' (U+0041--005A).
+\item Latin upper- and lower-case characters `a'--`z' (U+0061--007A) and `A'--`Z' (U+0041--005A). (See \secref{existingchars} regarding the subset of these already present in Unicode as sub/superscripts.)
 
-\item Greek upper- and lower-case characters `$\upalpha$'--`$\upomega$' (U+03B1--03C9) and `A'--`$\Upomega$' (U+0391--03A9) as well as lunate epsilon `$\upepsilon$' (U+03F5).
+\item Greek upper- and lower-case characters `$\upalpha$'--`$\upomega$' (U+03B1--03C9) and `A'--`$\Upomega$' (U+0391--03A9) as well as lunate epsilon `$\upepsilon$' (U+03F5).   (See \secref{existingchars} regarding the small subset of these already present in Unicode as sub/superscripts.)
 
 \item Decimal digits `0'--`9'  (U+0030--0039): these already have acceptable sub/superscript characters (U+2080--2089 and U+2070--2079), which should be canonically equivalent to the corresponding digit followed by a sub/superscript combining character as described below.
 
@@ -166,6 +166,7 @@ The following existing Unicode codepoints are widely used in subscripts and supe
 \end{itemize}
 
 \subsection{Relationship to existing sub/superscript letters}
+\secref{sec:existingchars}
 
 A subset of Latin and Greek letters already have sub/superscript variants in Unicode.  For example, `$^\mathrm{a}$' is U+1D43 and `$_\mathrm{a}$' is U+2090, while `$^\mathrm{A}$' is U+1D2C but there is no subscript `A' character.   However, these codepoints seem to have been added piecemeal into the Unicode standard for a variety of semantic meanings unrelated to their usage in mathematical notation (e.g. `$^\mathrm{a}$' is in the Latin-1 Supplement block, whereas `$^\mathrm{k}$' is in the Phonetic Extensions block).  (Accordingly, they are rendered with inconsistent baselines and kerning in many fonts.) Therefore we recommend that these existing characters \textbf{should not be canonically equivalent} to the proposed new mathematical sub/superscript characters (whether implemented by new codepoints or by combining characters).
 
@@ -189,6 +190,12 @@ As explained in \secref{required}, Unicode currently contains only a subset of t
 
 \section{Provision of Fonts}
 
+Because the required glyphs are merely sub/superscript variants of existing characters, relatively little effort will be required to support the new combining characters for common mathematical usage. Common font editing software provides automated ways to take a set of glyphs and generate transformed variants by scaling them and shifting the baseline.  Having generated a sub/superscript glyph, e.g. a subscript ``A'', the font can then define a glyph substitution sequence indicating that ``A'' followed by the new subscript combining character will be rendered as a subscript-``A'' \emph{ligature}, e.g. using an OpenType glyph-substitution table~\cite{opentypeGSUB}.  (Even if every glyph suggested in \secref{required} is implemented in this way, it still represents only about 250 glyphs.)
+
+In the longer run, text-rendering software such as Microsoft DirectWrite, Apple Core Text, or the free/open-source HarfBuzz engine may choose to automate this process even for fonts
+lacking such substitution sequences.   While this would add flexibility and improve adoption, however, it is not required---\emph{existing text rendering software would be sufficient} given a font
+providing sub/superscript ligatures.
+
 \TODO{%
 Proposals should include ``the name and contact information
 for a company or individual who would agree to provide a computerized
@@ -208,22 +215,22 @@ MA 02139.
 \end{itemize}
 \begin{thebibliography}{10}
 
-\bibitem{Csharp}Microsoft Corporation, \emph{C\# Language Specification},
+\bibitem{Csharp}Microsoft Corporation, \textit{C\# Language Specification},
 version 5.0, section 2.4.2 (2012).
 
-\bibitem{Fortress}Sun Microsystems, Inc., \emph{The Fortress Language
+\bibitem{Fortress}Sun Microsystems, Inc., \textit{The Fortress Language
 Specification}, version 1.0, \url{http://www.ccs.neu.edu/home/samth/fortress-spec.pdf}
 (2008-03-31).
 
-\bibitem{Go}The Go Authors, \emph{The Go Programming Language Specification},
+\bibitem{Go}The Go Authors, \textit{The Go Programming Language Specification},
 \url{https://golang.org/ref/spec} (2020-01-14).
 
 \bibitem{Java}James Gosling, Bill Joy, Guy Steele, Gilad Bracha,
-and Alex Buckley, \emph{The Java Language Specification: Java SE 8
+and Alex Buckley, \textit{The Java Language Specification: Java SE 8
 Edition}, section 3.8, \url{http://docs.oracle.com/javase/specs/jls/se8/html/jls-3.html\#jls-3.8}
 (2015-02-13).
 
-\bibitem{Julia}The Julia Authors, \emph{The Julia Programming Language
+\bibitem{Julia}The Julia Authors, \textit{The Julia Programming Language
 Manual}, \url{http://docs.julialang.org/en/latest/manual/variables/}
 (retrieved 2016-08-25).
 
@@ -231,15 +238,15 @@ Manual}, \url{http://docs.julialang.org/en/latest/manual/variables/}
 Supporting Non-ASCII Identifiers,'' \url{https://www.python.org/dev/peps/pep-3131/}
 (2007-05-01).
 
-\bibitem{Scala}M.~Odersky \textit{et al.}, \emph{Scala Language Specification},
+\bibitem{Scala}M.~Odersky \textit{et al.}, \textit{Scala Language Specification},
 version 2.13, \url{https://scala-lang.org/files/archive/spec/2.13/01-lexical-syntax.html}
 (2020-08-25).
 
-\bibitem{Swift}Apple Inc, \emph{The Swift Programming Language},
+\bibitem{Swift}Apple Inc, \textit{The Swift Programming Language},
 version 5.3, \url{https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/LexicalStructure.html}
 (2020-06-22).
 
-\bibitem{UAX31}Mark Davis, \emph{Unicode Standard Annex \#31: Unicode
+\bibitem{UAX31}Mark Davis, \textit{Unicode Standard Annex \#31: Unicode
 Identifier and Pattern Syntax}, version 13.0.0, \url{https://www.unicode.org/reports/tr31/tr31-33.html}
 (2020-02-13).
 
@@ -261,7 +268,7 @@ Identifier and Pattern Syntax}, version 13.0.0, \url{https://www.unicode.org/rep
 (retrieved 2020-08-24).
 
 \bibitem{IPython}Brian E. Granger, ``Adds Julia-style
-latex->unicode tab completion,'' \emph{IPython pull
+latex->unicode tab completion,'' \textit{IPython pull
 request \#6380}, \url{https://github.com/ipython/ipython/pull/6380}
 (2014-08-28).
 
@@ -295,6 +302,10 @@ Notation: Past and Future,'' \url{http://www.stephenwolfram.com/publications/mat
 \bibitem{OpenType}Microsoft Corporation, ``Registered
 Features,'' \emph{OpenType Specification}, version
 1.7 \url{https://www.microsoft.com/typography/otspec/features_pt.htm\#sinf}
-(2008-11-19). \end{thebibliography}
+(2008-11-19). 
+
+\bibitem{opentypeGSUB}Microsoft Corporation, ``GSUB---Glyph Substitution Table,'' \textit{OpenType Specification} \url{https://docs.microsoft.com/en-us/typography/opentype/spec/gsub} (2018-08-15).
+
+\end{thebibliography}
 
 \end{document}
