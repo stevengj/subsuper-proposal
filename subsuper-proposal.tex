@@ -145,7 +145,7 @@ eliminate frustrating omissions from the Latin and Greek alphabets.
 \section{Suggested Subscript/Superscript Characters}
 \label{sec:required}
 
-The following existing Unicode codepoints are widely used in subscripts and superscripts of mathematical notation, and should therefore have new sub/superscript variants (ideally via combining characters as described below):
+The following existing Unicode codepoints are widely used in subscripts and superscripts of mathematical notation, and should therefore have new sub/superscript variants (ideally via combining characters as described below, which will allow the set of available characters to be expanded incrementally by font providers as described in \secref{fonts}):
 
 \begin{itemize}
 
@@ -189,6 +189,7 @@ The alternative to adding new combining characters is to simply add new characte
 As explained in \secref{required}, Unicode currently contains only a subset of the most common mathematical subscripts and superscripts, and omits many Latin and Greek letters (e.g. there is no superscript `q' or subscript `A').  Furthermore, formatting/presentation markup like MathML, OpenDocument format (ODF), and similar typesetting/text-formatting technologies are \textbf{not usable for source code} in programming languages, nearly all of which require ``plain text'' input with no XML or other formatting metadata.
 
 \section{Provision of Fonts}
+\label{sec:fonts}
 
 Because the required glyphs are merely sub/superscript variants of existing characters, relatively little effort will be required to support the new combining characters for common mathematical usage. Common font editing software provides automated ways to take a set of glyphs and generate transformed variants by scaling them and shifting the baseline.  Having generated a sub/superscript glyph, e.g. a subscript ``A'', the font can then define a glyph substitution sequence indicating that ``A'' followed by the new subscript combining character will be rendered as a subscript-``A'' \emph{ligature}, e.g. using an OpenType glyph-substitution table~\cite{opentypeGSUB}.  (Even if every glyph suggested in \secref{required} is implemented in this way, it still represents only about 250 glyphs.)
 
