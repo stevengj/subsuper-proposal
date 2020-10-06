@@ -17,19 +17,7 @@ We believe that, given the recent explosion of Unicode support in
 programming languages (and editors), the time is ripe to propose
 better support for mathematical subscripts/superscripts in Unicode.
 
-## Two alternative proposals
-
-* The simplest possibility, similar to the existing superscripts and
-subscripts in Unicode, is to propose additional characters of the
-same sort: certainly every Latin and Greek upper and lowercase letter,
-and probably a few additional mathematical symbols such as ‖, ⟂, *, †
-that are commonly used in superscripts and/or subscripts.
-
-* A more general possibility would be to propose two new [combining characters](https://en.wikipedia.org/wiki/Combining_character), *mathematical subscript* and *mathematical superscript*, that indicate that the previous glyph (a character + combining characters) should be rendered in sub/superscript form.
-
-Input from experts in fonts and text rendering software would be
-especially helpful in evaluating the feasibility of the latter
-approach.
+Our proposal is to add [combining characters](https://en.wikipedia.org/wiki/Combining_character), *mathematical subscript* and *mathematical superscript*, that indicate that the previous glyph (a character + combining characters) should be rendered in sub/superscript form.   Fonts can then implement these characters as "ligatures" for selected characters, so that e.g. an "A" followed by "mathematical subscript" would render as a subscript "A".
 
 ## How you can help
 
