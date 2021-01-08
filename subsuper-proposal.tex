@@ -193,17 +193,11 @@ As explained in \secref{required}, Unicode currently contains only a subset of t
 
 Because the required glyphs are merely sub/superscript variants of existing characters, relatively little effort will be required to support the new combining characters for common mathematical usage. Common font editing software provides automated ways to take a set of glyphs and generate transformed variants by scaling them and shifting the baseline.  Having generated a sub/superscript glyph, e.g. a subscript ``A'', the font can then define a glyph substitution sequence indicating that ``A'' followed by the new subscript combining character will be rendered as a subscript-``A'' \emph{ligature}, e.g. using an OpenType glyph-substitution table~\cite{opentypeGSUB}.  (Even if every glyph suggested in \secref{required} is implemented in this way, it still represents only about 250 glyphs.)
 
+Draft versions of the proposed glyphs in \secref{required} have already been implemented in the JuliaMono TrueType font~\cite{juliamono}, and in collaboration with Stefan~Karpinski (co-author of this proposal) we plan to support these glyphs via the new combining character in JuliaMono if this proposal is accepted.
+
 In the longer run, text-rendering software such as Microsoft DirectWrite, Apple Core Text, or the free/open-source HarfBuzz engine may choose to automate this process even for fonts
 lacking such substitution sequences.   While this would add flexibility and improve adoption, however, it is not required---\emph{existing text rendering software would be sufficient} given a font
 providing sub/superscript ligatures.
-
-\TODO{%
-Proposals should include ``the name and contact information
-for a company or individual who would agree to provide a computerized
-font (True Type or PostScript) for publication of the standard''
-(\url{http://unicode.org/pending/proposals.html})
-}
-
 
 \section{Contact Information}
 
@@ -306,6 +300,8 @@ Features,'' \emph{OpenType Specification}, version
 (2008-11-19). 
 
 \bibitem{opentypeGSUB}Microsoft Corporation, ``GSUB---Glyph Substitution Table,'' \textit{OpenType Specification} \url{https://docs.microsoft.com/en-us/typography/opentype/spec/gsub} (2018-08-15).
+
+\bibitem{juliamono}``JuliaMono---A monospaced font for scientific and technical computing,'' \url{https://cormullion.github.io/pages/2020-07-26-JuliaMono/} (2020-07-26).
 
 \end{thebibliography}
 
